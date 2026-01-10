@@ -1,0 +1,125 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: color 0.15s ease;
+}
+
+.logo:hover {
+  color: var(--primary-dark);
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navToggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.navToggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-primary);
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.navToggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.navToggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navToggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+@media (max-width: 768px) {
+  .navMenu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    padding: 2rem 0;
+    gap: 0;
+  }
+
+  .navMenu.active {
+    left: 0;
+  }
+
+  .navMenu li {
+    padding: 1rem 0;
+  }
+
+  .navToggle {
+    display: flex;
+  }
+}
