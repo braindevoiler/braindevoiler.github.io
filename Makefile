@@ -54,7 +54,7 @@ deploy: ## Build and deploy to GitHub Pages
 	@git branch -D gh-pages 2>/dev/null || true
 	@git checkout --orphan gh-pages
 	@git rm -rf . 2>/dev/null || true
-	@cp -r out/* .
+	@cp -r out/. .
 	@rm -rf out
 	@git add .
 	@git commit -m "Deploy to GitHub Pages - $$(date '+%Y-%m-%d %H:%M:%S')"
