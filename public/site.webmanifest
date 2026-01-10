@@ -1,0 +1,9 @@
+{
+  "name": "Ankur Gupta - Portfolio",
+  "short_name": "Ankur Gupta",
+  "description": "Staff Software Engineer specializing in System Design and Microservices Architecture",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}
