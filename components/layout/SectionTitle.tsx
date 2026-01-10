@@ -44,11 +44,11 @@ export default function SectionTitle({
       </Typography>
       {subtitle && (
         <Typography
-          variant="subtitle1"
+          variant="body1"
           sx={{
-            mt: 2,
+            mt: 3,
             color: 'text.secondary',
-            maxWidth: 800,
+            maxWidth: 700,
             mx: centered ? 'auto' : 0,
           }}
         >

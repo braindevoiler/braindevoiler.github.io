@@ -52,10 +52,9 @@ export default function StatCard({ number, label, color = 'blue' }: StatCardProp
           {number}
         </Typography>
         <Typography
-          variant="caption"
+          variant="body2"
           sx={{
             color: 'text.secondary',
-            fontSize: '14px',
             fontWeight: 500,
           }}
         >

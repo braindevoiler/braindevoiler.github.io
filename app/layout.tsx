@@ -5,7 +5,12 @@ import { metadata as seoMetadata, generatePersonStructuredData } from '@/lib/seo
 import { GoogleAnalytics } from '@/lib/analytics';
 import ThemeRegistry from '@/theme/ThemeRegistry';
 
-const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] });
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = seoMetadata;
 
@@ -17,7 +22,7 @@ export default function RootLayout({
   const structuredData = generatePersonStructuredData();
 
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
         <script
           type="application/ld+json"

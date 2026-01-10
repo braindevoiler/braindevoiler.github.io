@@ -82,7 +82,8 @@ export const theme = createTheme({
   },
 
   typography: {
-    fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+    // Use CSS variable from Next.js font loader, with fallbacks
+    fontFamily: "var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
 
     // Hero
     h1: {
@@ -155,6 +156,7 @@ export const theme = createTheme({
       lineHeight: 1.6,
     },
 
+    // Main body text
     body1: {
       fontSize: '16px',
       fontWeight: 400,
@@ -162,18 +164,19 @@ export const theme = createTheme({
       letterSpacing: '0em',
     },
 
-    // Large body text
+    // Secondary body text (smaller)
     body2: {
-      fontSize: '18px',
-      fontWeight: 400,
-      lineHeight: 1.8,
-      letterSpacing: '0em',
-    },
-
-    caption: {
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.6,
+      letterSpacing: '0em',
+    },
+
+    // Caption text
+    caption: {
+      fontSize: '12px',
+      fontWeight: 400,
+      lineHeight: 1.5,
       letterSpacing: '0em',
     },
 

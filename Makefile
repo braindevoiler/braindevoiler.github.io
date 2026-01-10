@@ -54,7 +54,7 @@ deploy: ## Build and deploy to GitHub Pages
 	@git branch -D gh-pages 2>/dev/null || true
 	@git checkout --orphan gh-pages
 	@git rm -rf . 2>/dev/null || true
-	@rm -rf node_modules .next
+	@sudo rm -rf node_modules .next 2>/dev/null || rm -rf node_modules .next
 	@cp -r out/. .
 	@rm -rf out
 	@git add .

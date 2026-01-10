@@ -16,7 +16,7 @@ export default function About() {
         <SectionTitle title="About Me" />
 
         <Typography
-          variant="body2"
+          variant="body1"
           sx={{
             textAlign: 'center',
             maxWidth: 900,
