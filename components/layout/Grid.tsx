@@ -2,6 +2,10 @@ import { Grid2 as MuiGrid, Grid2Props } from '@mui/material';
 
 interface GridProps extends Grid2Props {
   children: React.ReactNode;
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
 }
 
 // Grid Container Component
