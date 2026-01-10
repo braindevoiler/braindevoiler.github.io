@@ -1,0 +1,67 @@
+'use client';
+
+import { Card, CardContent, Typography } from '@mui/material';
+
+// Google colors (red is muted for better visual balance)
+const GOOGLE_COLORS = {
+  blue: '#4285F4',
+  red: '#DB4437', // Muted red
+  yellow: '#FBBC05',
+  green: '#34A853',
+};
+
+interface StatCardProps {
+  number: string;
+  label: string;
+  color?: 'blue' | 'red' | 'yellow' | 'green';
+}
+
+export default function StatCard({ number, label, color = 'blue' }: StatCardProps) {
+  const accentColor = GOOGLE_COLORS[color];
+
+  return (
+    <Card
+      sx={{
+        background: 'rgba(255, 255, 255, 0.9)',
+        backdropFilter: 'blur(20px)',
+        border: '1px solid',
+        borderColor: 'divider',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+          transform: 'translateY(-4px)',
+          boxShadow: `0 20px 25px -5px ${accentColor}30, 0 10px 10px -5px ${accentColor}20`,
+          borderColor: accentColor,
+        },
+      }}
+    >
+      <CardContent
+        sx={{
+          textAlign: 'center',
+          py: 3,
+        }}
+      >
+        <Typography
+          variant="h3"
+          sx={{
+            color: accentColor,
+            fontWeight: 700,
+            fontSize: { xs: '32px', md: '48px' },
+            mb: 0.5,
+          }}
+        >
+          {number}
+        </Typography>
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'text.secondary',
+            fontSize: '14px',
+            fontWeight: 500,
+          }}
+        >
+          {label}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+}

@@ -3,8 +3,9 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { metadata as seoMetadata, generatePersonStructuredData } from '@/lib/seo';
 import { GoogleAnalytics } from '@/lib/analytics';
+import ThemeRegistry from '@/theme/ThemeRegistry';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] });
 
 export const metadata: Metadata = seoMetadata;
 
@@ -25,7 +26,9 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
       <body className={inter.className}>
-        {children}
+        <ThemeRegistry>
+          {children}
+        </ThemeRegistry>
       </body>
     </html>
   );
