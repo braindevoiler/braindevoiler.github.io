@@ -54,6 +54,7 @@ deploy: ## Build and deploy to GitHub Pages
 	@git branch -D gh-pages 2>/dev/null || true
 	@git checkout --orphan gh-pages
 	@git rm -rf . 2>/dev/null || true
+	@rm -rf node_modules .next
 	@cp -r out/. .
 	@rm -rf out
 	@git add .
@@ -61,6 +62,7 @@ deploy: ## Build and deploy to GitHub Pages
 	@echo "$(YELLOW)Pushing to gh-pages branch...$(NC)"
 	@git push origin gh-pages --force
 	@git checkout main
+	@npm ci --silent
 	@echo ""
 	@echo "$(GREEN)✓ Deployed successfully!$(NC)"
 	@echo "$(BLUE)Both branches updated:$(NC)"
