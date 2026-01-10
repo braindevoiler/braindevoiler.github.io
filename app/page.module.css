@@ -885,3 +885,243 @@
     font-size: 2rem;
   }
 }
+
+/* GATE Notes Section */
+.gateNotes {
+  background: var(--bg-primary);
+  padding: 6rem 0;
+}
+
+.gateNotesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gateNoteCard {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.gateNoteCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-top: 4px solid var(--primary);
+}
+
+.gateNoteIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.gateNoteCard h3 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.gateNoteDescription {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.gateNoteTopics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.topicTag {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.downloadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.downloadIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Blog Section */
+.blog {
+  background: var(--bg-secondary);
+  padding: 6rem 0;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.blogCard {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.blogCard h3 {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.blogExcerpt {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.blogMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.blogAuthor, .blogDate, .blogReadTime {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.blogTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.blogTag {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.blogContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, margin 0.3s ease;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.blogContent.expanded {
+  max-height: 5000px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--border);
+}
+
+.blogContent h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.blogContent h4 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 1.2rem 0 0.5rem;
+}
+
+.blogContent p {
+  margin-bottom: 1rem;
+}
+
+.blogContent ul,
+.blogContent ol {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.blogContent li {
+  margin-bottom: 0.5rem;
+}
+
+.blogContent blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.readMoreBtn {
+  align-self: flex-start;
+  padding: 0.6rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.readMoreBtn:hover {
+  background: var(--primary-dark);
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+  .gateNotesGrid,
+  .blogGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -22,6 +22,8 @@ export default function Navigation() {
     { href: '#skills', label: 'Skills' },
     { href: '#education', label: 'Education' },
     { href: '#achievements', label: 'Achievements' },
+    { href: '#gate-notes', label: 'GATE Notes' },
+    { href: '#blog', label: 'Blog' },
     { href: '#contact', label: 'Contact' },
   ];
 
