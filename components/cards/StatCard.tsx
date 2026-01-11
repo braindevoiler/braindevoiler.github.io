@@ -38,7 +38,12 @@ export default function StatCard({ number, label, color = 'blue' }: StatCardProp
       <CardContent
         sx={{
           textAlign: 'center',
-          py: 3,
+          py: { xs: 2, md: 3 },
+          px: { xs: 1, md: 2 },
+          minHeight: { xs: '90px', md: '120px' },
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
         }}
       >
         <Typography
@@ -46,8 +51,9 @@ export default function StatCard({ number, label, color = 'blue' }: StatCardProp
           sx={{
             color: accentColor,
             fontWeight: 700,
-            fontSize: { xs: '32px', md: '48px' },
+            fontSize: { xs: '24px', sm: '32px', md: '48px' },
             mb: 0.5,
+            lineHeight: 1,
           }}
         >
           {number}
@@ -57,6 +63,13 @@ export default function StatCard({ number, label, color = 'blue' }: StatCardProp
           sx={{
             color: 'text.secondary',
             fontWeight: 500,
+            fontSize: { xs: '10px', sm: '12px', md: '14px' },
+            lineHeight: 1.2,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
           }}
         >
           {label}

@@ -34,29 +34,29 @@ export default function GateNotesPage() {
                         </Button>
                     </Link>
 
-                    <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 3 }}>
-                        <School sx={{ fontSize: 48 }} />
-                        <Typography variant="h1" sx={{ fontSize: { xs: '2rem', md: '3rem' }, fontWeight: 700 }}>
+                    <Stack direction="row" spacing={{ xs: 1, md: 2 }} alignItems="center" sx={{ mb: { xs: 2, md: 3 } }}>
+                        <School sx={{ fontSize: { xs: 36, md: 48 } }} />
+                        <Typography variant="h1" sx={{ fontSize: { xs: '1.75rem', sm: '2rem', md: '3rem' }, fontWeight: 700 }}>
                             GATE CS Notes
                         </Typography>
                     </Stack>
 
-                    <Typography variant="h5" sx={{ opacity: 0.95, mb: 2, fontWeight: 400 }}>
+                    <Typography variant="h5" sx={{ opacity: 0.95, mb: { xs: 2, md: 2 }, fontWeight: 400, fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' } }}>
                         Free comprehensive notes downloaded 100K+ times by GATE aspirants since 2013
                     </Typography>
 
-                    <Stack direction="row" spacing={4} sx={{ mt: 4 }}>
-                        <Box>
-                            <Typography variant="h3" sx={{ fontWeight: 700 }}>100K+</Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.8 }}>Downloads</Typography>
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2, sm: 4 }} alignItems="center" sx={{ mt: { xs: 3, md: 4 } }}>
+                        <Box sx={{ textAlign: 'center' }}>
+                            <Typography variant="h3" sx={{ fontWeight: 700, fontSize: { xs: '1.5rem', md: '2.5rem' } }}>100K+</Typography>
+                            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: { xs: '0.875rem', md: '1rem' } }}>Downloads</Typography>
                         </Box>
-                        <Box>
-                            <Typography variant="h3" sx={{ fontWeight: 700 }}>10+</Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.8 }}>Subjects</Typography>
+                        <Box sx={{ textAlign: 'center' }}>
+                            <Typography variant="h3" sx={{ fontWeight: 700, fontSize: { xs: '1.5rem', md: '2.5rem' } }}>10+</Typography>
+                            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: { xs: '0.875rem', md: '1rem' } }}>Subjects</Typography>
                         </Box>
-                        <Box>
-                            <Typography variant="h3" sx={{ fontWeight: 700 }}>AIR 54</Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.8 }}>Author's Rank</Typography>
+                        <Box sx={{ textAlign: 'center' }}>
+                            <Typography variant="h3" sx={{ fontWeight: 700, fontSize: { xs: '1.5rem', md: '2.5rem' } }}>AIR 54</Typography>
+                            <Typography variant="body2" sx={{ opacity: 0.8, fontSize: { xs: '0.875rem', md: '1rem' } }}>Author's Rank</Typography>
                         </Box>
                     </Stack>
                 </Container>
