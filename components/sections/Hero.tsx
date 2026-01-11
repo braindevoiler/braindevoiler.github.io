@@ -57,7 +57,7 @@ export default function Hero() {
           <Typography
             variant="h1"
             sx={{
-              mb: 2,
+              mb: { xs: 1, md: 2 },
               background: 'linear-gradient(135deg, #171717 0%, #525252 100%)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
@@ -71,7 +71,7 @@ export default function Hero() {
           <Typography
             variant="subtitle1"
             sx={{
-              mb: 3,
+              mb: { xs: 2, md: 3 },
               color: 'text.primary',
             }}
           >
@@ -81,44 +81,44 @@ export default function Hero() {
           {/* Company Pills - Distinct Colors */}
           <Stack
             direction="row"
-            spacing={2}
+            spacing={{ xs: 1, md: 2 }}
             justifyContent="center"
             flexWrap="wrap"
-            sx={{ mb: 6, gap: 2 }}
+            sx={{ mb: { xs: 3, md: 6 }, gap: { xs: 1, md: 2 } }}
           >
             <Chip
               label="Ex-Google"
               sx={{
-                bgcolor: '#4285F4', // Google Blue
+                bgcolor: '#4285F4',
                 color: 'white',
                 fontWeight: 600,
-                fontSize: '16px',
-                px: 2,
-                py: 2.5,
+                fontSize: { xs: '14px', md: '16px' },
+                px: { xs: 1.5, md: 2 },
+                py: { xs: 1.5, md: 2.5 },
                 height: 'auto',
               }}
             />
             <Chip
               label="Ex-PayPal"
               sx={{
-                bgcolor: '#F59E0B', // Warm Amber/Gold
+                bgcolor: '#F59E0B',
                 color: 'white',
                 fontWeight: 600,
-                fontSize: '16px',
-                px: 2,
-                py: 2.5,
+                fontSize: { xs: '14px', md: '16px' },
+                px: { xs: 1.5, md: 2 },
+                py: { xs: 1.5, md: 2.5 },
                 height: 'auto',
               }}
             />
             <Chip
               label="IISc Alumni"
               sx={{
-                bgcolor: '#34A853', // Google Green
+                bgcolor: '#34A853',
                 color: 'white',
                 fontWeight: 600,
-                fontSize: '16px',
-                px: 2,
-                py: 2.5,
+                fontSize: { xs: '14px', md: '16px' },
+                px: { xs: 1.5, md: 2 },
+                py: { xs: 1.5, md: 2.5 },
                 height: 'auto',
               }}
             />
@@ -126,14 +126,14 @@ export default function Hero() {
 
           {/* Stats Cards - Matching Chip Colors */}
           <Box sx={{ maxWidth: 900, mx: 'auto' }}>
-            <GridContainer spacing={3} sx={{ mb: 6, justifyContent: 'center' }}>
-              <GridItem xs={12} sm={4}>
+            <GridContainer spacing={{ xs: 2, md: 3 }} sx={{ mb: { xs: 3, md: 6 }, justifyContent: 'center' }}>
+              <GridItem xs={4} sm={4}>
                 <StatCard number={stats.experience} label="Years Experience" color="blue" />
               </GridItem>
-              <GridItem xs={12} sm={4}>
+              <GridItem xs={4} sm={4}>
                 <StatCard number={stats.followers} label="LinkedIn Followers" color="amber" />
               </GridItem>
-              <GridItem xs={12} sm={4}>
+              <GridItem xs={4} sm={4}>
                 <StatCard number={stats.gateRank} label="GATE Rank" color="green" />
               </GridItem>
             </GridContainer>
@@ -144,7 +144,7 @@ export default function Hero() {
             direction={{ xs: 'column', sm: 'row' }}
             spacing={2}
             justifyContent="center"
-            sx={{ mb: 8 }}
+            sx={{ mb: { xs: 4, md: 8 } }}
           >
             <Button
               variant="contained"
@@ -172,10 +172,11 @@ export default function Hero() {
             </Button>
           </Stack>
 
-          {/* Scroll Indicator */}
+          {/* Scroll Indicator - Hidden on mobile to save space */}
           <Box
             onClick={scrollToNextSection}
             sx={{
+              display: { xs: 'none', md: 'block' },
               cursor: 'pointer',
               animation: 'bounce 2s infinite',
               '@keyframes bounce': {
