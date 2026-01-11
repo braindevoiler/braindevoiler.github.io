@@ -8,7 +8,7 @@ import { GridContainer, GridItem } from '../layout/Grid';
 import { profileData } from '@/data/profile';
 
 // Google colors for cycling through categories
-const GOOGLE_COLORS = ['#4285F4', '#EA4335', '#FBBC05', '#34A853'];
+const GOOGLE_COLORS = ['#4285F4', '#EA4335', '#F59E0B', '#34A853'];
 
 export default function Skills() {
   const { skills } = profileData;

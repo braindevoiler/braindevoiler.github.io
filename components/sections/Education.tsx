@@ -19,7 +19,7 @@ export default function Education() {
         <GridContainer spacing={3} sx={{ maxWidth: 1200, mx: 'auto', justifyContent: 'center' }}>
           {education.map((edu, index) => (
             <GridItem key={index} xs={12} md={6}>
-              <Card>
+              <Card sx={{ height: '100%' }}>
                 <CardContent sx={{ p: 3 }}>
                   <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
                     <Box

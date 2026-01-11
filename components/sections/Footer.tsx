@@ -4,6 +4,19 @@ import { Box, Container, Typography, IconButton, Stack } from '@mui/material';
 import { LinkedIn, GitHub, Email } from '@mui/icons-material';
 import { profileData } from '@/data/profile';
 
+// Split email into parts to prevent crawler detection
+const EMAIL_PARTS = {
+  user: 'ankur',
+  domain: 'ankurgupta',
+  tld: 'net',
+};
+
+const handleEmailClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+  const email = `${EMAIL_PARTS.user}@${EMAIL_PARTS.domain}.${EMAIL_PARTS.tld}`;
+  window.location.href = `mailto:${email}`;
+};
+
 export default function Footer() {
   const { personal } = profileData;
   const currentYear = new Date().getFullYear();
@@ -67,7 +80,9 @@ export default function Footer() {
             </IconButton>
             <IconButton
               component="a"
-              href={`mailto:${personal.email}`}
+              href="#"
+              onClick={handleEmailClick}
+              aria-label="Send email"
               sx={{
                 color: 'white',
                 '&:hover': {

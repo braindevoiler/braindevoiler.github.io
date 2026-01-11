@@ -9,7 +9,7 @@ import { GridContainer, GridItem } from '../layout/Grid';
 import { gateNotes } from '@/data/gateNotes';
 
 // Google colors for cycling
-const GOOGLE_COLORS = ['#4285F4', '#EA4335', '#FBBC05', '#34A853'];
+const GOOGLE_COLORS = ['#4285F4', '#EA4335', '#F59E0B', '#34A853'];
 
 export default function GateNotes() {
   return (
@@ -17,7 +17,7 @@ export default function GateNotes() {
       <Container>
         <SectionTitle
           title="GATE CS Notes"
-          subtitle="Free comprehensive notes trusted by thousands of GATE aspirants since 2012"
+          subtitle="Free comprehensive notes downloaded 100K+ times by GATE aspirants since 2013"
         />
 
         <Box
@@ -25,16 +25,16 @@ export default function GateNotes() {
             textAlign: 'center',
             mb: 4,
             p: 3,
-            background: 'linear-gradient(135deg, #4285F4 0%, #34A853 50%, #FBBC05 100%)',
+            background: 'linear-gradient(135deg, #4285F4 0%, #34A853 50%, #F59E0B 100%)',
             color: 'white',
             borderRadius: 2,
           }}
         >
           <Typography variant="h4" gutterBottom>
-            13 Years of Educational Impact
+            100K+ Downloads • 13 Years of Impact
           </Typography>
           <Typography variant="body1">
-            These notes have helped thousands of students prepare for GATE Computer Science exam.
+            These notes have helped over 100,000 students prepare for GATE Computer Science exam.
             Created by an AIR 54 ranker, freely available to the community.
           </Typography>
         </Box>

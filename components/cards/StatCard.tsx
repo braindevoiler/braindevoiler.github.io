@@ -2,22 +2,23 @@
 
 import { Card, CardContent, Typography } from '@mui/material';
 
-// Google colors (red is muted for better visual balance)
-const GOOGLE_COLORS = {
-  blue: '#4285F4',
-  red: '#DB4437', // Muted red
-  yellow: '#FBBC05',
-  green: '#34A853',
+// Brand colors matching the hero chips
+const COLORS = {
+  blue: '#4285F4',    // Google Blue
+  amber: '#F59E0B',   // PayPal Amber
+  green: '#34A853',   // IISc Green
+  red: '#DB4437',     // Muted red (backup)
+  yellow: '#FBBC05',  // Google Yellow (backup)
 };
 
 interface StatCardProps {
   number: string;
   label: string;
-  color?: 'blue' | 'red' | 'yellow' | 'green';
+  color?: 'blue' | 'amber' | 'green' | 'red' | 'yellow';
 }
 
 export default function StatCard({ number, label, color = 'blue' }: StatCardProps) {
-  const accentColor = GOOGLE_COLORS[color];
+  const accentColor = COLORS[color];
 
   return (
     <Card

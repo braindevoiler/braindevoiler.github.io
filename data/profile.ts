@@ -11,7 +11,7 @@ export const profileData = {
     github: "https://github.com/braindevoiler",
     linkedin: "https://www.linkedin.com/in/ankurcsa/",
     blog: "https://ankurgupta.net/blog/",
-    followers: "26,000+",
+    followers: "25,000+",
   },
 
   about: {
@@ -186,36 +186,6 @@ export const profileData = {
         "Designed PCA based stochastic data generation algorithm",
       ],
     },
-    {
-      name: "High Speed Rail Competition Analysis",
-      period: "Feb 2013 - Apr 2013",
-      institution: "Indian Institute of Science",
-      description: "Game theoretic approach to understand inter-modal competition between HSR and conventional transport systems. Published in Elsevier.",
-      achievements: [
-        "Analyzed competition among transportation modes using game theory",
-        "Derived optimal strategies for profit maximization",
-        "Published research in Elsevier journal",
-      ],
-      link: "https://www.sciencedirect.com/science/article/pii/S2352146513000409",
-    },
-    {
-      name: "PCM-Conscious Database Operators",
-      period: "Feb 2013 - Apr 2013",
-      institution: "Indian Institute of Science",
-      description: "Implemented hash table based algorithm for 'Group By' and 'Having' database operators using PCM memory to reduce writes.",
-    },
-    {
-      name: "Sphere Impostor using Tessellation Shaders",
-      period: "Sep 2012 - Nov 2012",
-      institution: "Indian Institute of Science",
-      description: "Graphics project using OpenGL 4.0 tessellation shaders and depth correction for pixel-precise sphere rendering.",
-    },
-    {
-      name: "Color Image Compression using 2D-PCA",
-      period: "Feb 2010 - Apr 2010",
-      institution: "MIET",
-      description: "Implemented 2D-PCA algorithm in MATLAB for image compression with feature extraction and normalization.",
-    },
   ],
 
   achievements: [
@@ -225,6 +195,13 @@ export const profileData = {
       organization: "Graduate Aptitude Test in Engineering",
       date: "2012",
       icon: "🏆",
+    },
+    {
+      title: "100K+ Downloads",
+      detail: "GATE CS Notes trusted by aspirants since 2013",
+      organization: "Community Resource",
+      date: "Ongoing",
+      icon: "📥",
     },
     {
       title: "SPOT Award",
@@ -241,26 +218,11 @@ export const profileData = {
       icon: "🌟",
     },
     {
-      title: "Published Research",
-      detail: "Analyzing Inter-modal Competition between High Speed Rail and Conventional Transport Systems",
-      organization: "Elsevier",
-      date: "December 2013",
-      icon: "📚",
-      link: "https://www.sciencedirect.com/science/article/pii/S2352146513000409",
-    },
-    {
       title: "HackOdisha 2.0 Mentor",
       detail: "Mentoring the next generation of developers",
-      organization: "HackOdisha 5.0",
+      organization: "HackOdisha",
       date: "September 2022",
       icon: "👨‍🏫",
-    },
-    {
-      title: "26,000+ Followers",
-      detail: "LinkedIn Influencer",
-      organization: "LinkedIn",
-      date: "Ongoing",
-      icon: "👥",
     },
     {
       title: "Infosys Training Excellence",
@@ -268,13 +230,6 @@ export const profileData = {
       organization: "Infosys Limited",
       date: "February 2011",
       icon: "📖",
-    },
-    {
-      title: "NIIT National IT Aptitude Test",
-      detail: "96.6 Percentile",
-      organization: "NIIT",
-      date: "January 2009",
-      icon: "💯",
     },
   ],
 

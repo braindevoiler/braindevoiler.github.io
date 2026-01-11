@@ -78,7 +78,7 @@ export default function Hero() {
             {personal.title}
           </Typography>
 
-          {/* Company Pills - Google Colors */}
+          {/* Company Pills - Distinct Colors */}
           <Stack
             direction="row"
             spacing={2}
@@ -101,7 +101,7 @@ export default function Hero() {
             <Chip
               label="Ex-PayPal"
               sx={{
-                bgcolor: '#4285F4', // Google Blue
+                bgcolor: '#F59E0B', // Warm Amber/Gold
                 color: 'white',
                 fontWeight: 600,
                 fontSize: '16px',
@@ -113,7 +113,7 @@ export default function Hero() {
             <Chip
               label="IISc Alumni"
               sx={{
-                bgcolor: '#4285F4', // Google Blue
+                bgcolor: '#34A853', // Google Green
                 color: 'white',
                 fontWeight: 600,
                 fontSize: '16px',
@@ -124,17 +124,17 @@ export default function Hero() {
             />
           </Stack>
 
-          {/* Stats Cards - Google Colors */}
+          {/* Stats Cards - Matching Chip Colors */}
           <Box sx={{ maxWidth: 900, mx: 'auto' }}>
             <GridContainer spacing={3} sx={{ mb: 6, justifyContent: 'center' }}>
               <GridItem xs={12} sm={4}>
                 <StatCard number={stats.experience} label="Years Experience" color="blue" />
               </GridItem>
               <GridItem xs={12} sm={4}>
-                <StatCard number={stats.followers} label="LinkedIn Followers" color="blue" />
+                <StatCard number={stats.followers} label="LinkedIn Followers" color="amber" />
               </GridItem>
               <GridItem xs={12} sm={4}>
-                <StatCard number={stats.gateRank} label="GATE Rank" color="blue" />
+                <StatCard number={stats.gateRank} label="GATE Rank" color="green" />
               </GridItem>
             </GridContainer>
           </Box>
@@ -162,13 +162,13 @@ export default function Hero() {
               variant="outlined"
               size="large"
               color="primary"
-              href={`mailto:${personal.email}`}
+              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               sx={{
                 px: 4,
                 py: 1.5,
               }}
             >
-              Download Resume
+              Get In Touch
             </Button>
           </Stack>
 

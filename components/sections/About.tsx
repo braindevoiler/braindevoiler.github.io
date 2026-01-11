@@ -65,10 +65,10 @@ export default function About() {
             </GridItem>
 
             <GridItem xs={12} sm={6} md={4}>
-              <Card sx={{ height: '100%', borderTop: '3px solid #FBBC05' }}>
+              <Card sx={{ height: '100%', borderTop: '3px solid #F59E0B' }}>
                 <CardContent sx={{ textAlign: 'center', py: 4 }}>
                   <Box sx={{ fontSize: 48, mb: 2 }}>🏆</Box>
-                  <Typography variant="h4" gutterBottom sx={{ color: '#FBBC05' }}>
+                  <Typography variant="h4" gutterBottom sx={{ color: '#F59E0B' }}>
                     Top Achievement
                   </Typography>
                   <Typography variant="body1" color="text.secondary">
