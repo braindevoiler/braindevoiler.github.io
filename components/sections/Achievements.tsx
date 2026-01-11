@@ -23,18 +23,12 @@ export default function Achievements() {
             {achievements.map((achievement, index) => (
               <GridItem key={index} xs={12} sm={6}>
                 <Card
-                  component={achievement.link ? 'a' : 'div'}
-                  href={achievement.link}
-                  target={achievement.link ? '_blank' : undefined}
-                  rel={achievement.link ? 'noopener noreferrer' : undefined}
                   sx={{
                     height: '100%',
-                    textDecoration: 'none',
-                    cursor: achievement.link ? 'pointer' : 'default',
                     transition: 'all 0.3s ease',
-                    '&:hover': achievement.link ? {
-                      transform: 'translateY(-4px) rotate(1deg)',
-                    } : {},
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                    },
                   }}
                 >
                   <CardContent sx={{ textAlign: 'center', py: 4 }}>
