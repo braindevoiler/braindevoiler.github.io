@@ -62,7 +62,7 @@ deploy: ## Build and deploy to GitHub Pages
 	@echo "$(YELLOW)Pushing to gh-pages branch...$(NC)"
 	@git push origin gh-pages --force
 	@git checkout main
-	@npm ci --silent
+	@npm ci --silent 2>/dev/null || true
 	@echo ""
 	@echo "$(GREEN)✓ Deployed successfully!$(NC)"
 	@echo "$(BLUE)Both branches updated:$(NC)"
