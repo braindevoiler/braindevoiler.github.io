@@ -85,8 +85,8 @@ export default function NoteViewer({ noteId }: NoteViewerProps) {
                                 startIcon={<Fullscreen />}
                                 onClick={handleFullscreen}
                                 size="small"
-                                fullWidth={{ xs: true, sm: false }}
                                 sx={{
+                                    width: { xs: '100%', sm: 'auto' },
                                     color: 'white',
                                     borderColor: 'rgba(255,255,255,0.5)',
                                     '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' },
@@ -101,8 +101,8 @@ export default function NoteViewer({ noteId }: NoteViewerProps) {
                                 href={note.pdfPath}
                                 download
                                 size="small"
-                                fullWidth={{ xs: true, sm: false }}
                                 sx={{
+                                    width: { xs: '100%', sm: 'auto' },
                                     bgcolor: 'white',
                                     color: '#4285F4',
                                     '&:hover': { bgcolor: 'rgba(255,255,255,0.9)' },
