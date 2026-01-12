@@ -240,6 +240,8 @@ export const profileData = {
       relationship: "Worked together on the same team",
       date: "October 2025",
       text: "I had the opportunity to work with Ankur at the beginning of my career, and I couldn't have asked for a better mentor and teammate. He led our project with great clarity and always made sure everyone understood the 'why' behind what we were building. As a junior software engineer, I learned a lot from him — not just about writing clean and efficient code, but also about problem-solving, ownership, and teamwork. His guidance helped me grow both technically and professionally.",
+      linkedinUrl: "https://www.linkedin.com/in/gourav-singal-680473185/",
+      imageUrl: "/testimonials/gourav-singal.jpg",
     },
     {
       name: "Ramana Satyavarapu",
@@ -247,6 +249,8 @@ export const profileData = {
       relationship: "Senior colleague",
       date: "November 2023",
       text: "Rockstar engineer who can build products ground up or scale systems exponentially. One of the best I've seen.",
+      linkedinUrl: "https://www.linkedin.com/in/ramana-satyavarapu/",
+      imageUrl: "/testimonials/ramana-satyavarapu.jpg",
     },
     {
       name: "Kuai Yu",
@@ -254,6 +258,8 @@ export const profileData = {
       relationship: "Senior colleague",
       date: "October 2023",
       text: "Ankur is a powerhouse of technical prowess and collaborative spirit. As the founding engineer on several projects, he has single-handedly built robust, efficient systems from the ground up. Beyond his technical contributions, Ankur is deeply committed to the growth of his fellow engineers. His guidance has had a profound impact on the team's overall skill level.",
+      linkedinUrl: "https://www.linkedin.com/in/kuai/",
+      imageUrl: "/testimonials/kuai-yu.jpg",
     },
     {
       name: "Amit Tomar",
@@ -261,6 +267,26 @@ export const profileData = {
       relationship: "Studied together",
       date: "August 2020",
       text: "During his undergrad days, Ankur stood out from the average engineering student. He developed a working prototype of a social networking site (an Orkut clone) singlehandedly, while most of us were going through our introductory programming courses. He is self-motivated, quick learner and has learned most things in life on his own.",
+      linkedinUrl: "https://www.linkedin.com/in/amittomar1/",
+      imageUrl: "/testimonials/amit-tomar.jpg",
+    },
+    {
+      name: "Sourab Sharma",
+      title: "Software Engineer at Apple 🇨🇦",
+      relationship: "Worked together on the same team",
+      date: "April 2020",
+      text: "I was impressed by Ankur's ability to deal with even the toughest project deliverable – effortlessly. That skill often takes years to develop among software professionals, but it seemed to come perfectly naturally to him.",
+      linkedinUrl: "https://www.linkedin.com/in/sourab-sharma/",
+      imageUrl: "/testimonials/sourab-sharma.jpg",
+    },
+    {
+      name: "Aaryaman Vir Shah",
+      title: "Investing $1M in people with infectious delusion",
+      relationship: "Open source collaboration",
+      date: "April 2020",
+      text: "Ankur contributed to an open source project I was also volunteering on. Throughout the period of the project, Ankur was always available to help and contribute, even at odd hours of the night. He took ownership of the backend application and refactored a lot of the legacy code to make it more secure, more readable, and more re-useable. One of the things which impressed me was his willingness to always learn new things and push himself to get things done on time, despite working a 9-5 job!",
+      linkedinUrl: "https://www.linkedin.com/in/aaryaman-vir-shah-15721952/",
+      imageUrl: "/testimonials/aaryaman-shah.jpg",
     },
   ],
 
