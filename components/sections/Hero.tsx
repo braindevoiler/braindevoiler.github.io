@@ -2,6 +2,7 @@
 
 import { Box, Typography, Button, Stack, Chip } from '@mui/material';
 import { KeyboardArrowDown } from '@mui/icons-material';
+import { motion } from 'framer-motion';
 import Container from '../layout/Container';
 import StatCard from '../cards/StatCard';
 import { GridContainer, GridItem } from '../layout/Grid';
@@ -26,35 +27,33 @@ export default function Hero() {
         justifyContent: 'center',
         position: 'relative',
         background: `
-          radial-gradient(circle at 10% 20%, rgba(66, 133, 244, 0.08) 0%, transparent 40%),
-          radial-gradient(circle at 90% 20%, rgba(234, 67, 53, 0.06) 0%, transparent 40%),
-          radial-gradient(circle at 20% 80%, rgba(251, 188, 5, 0.06) 0%, transparent 40%),
-          radial-gradient(circle at 80% 80%, rgba(52, 168, 83, 0.06) 0%, transparent 40%),
-          #FFFFFF
+          linear-gradient(135deg, rgba(66, 133, 244, 0.03) 0%, rgba(255, 255, 255, 0) 50%),
+          radial-gradient(circle at 10% 20%, rgba(66, 133, 244, 0.12) 0%, transparent 50%),
+          radial-gradient(circle at 90% 20%, rgba(52, 168, 83, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 50% 100%, rgba(251, 188, 5, 0.06) 0%, transparent 50%),
+          linear-gradient(to bottom, #FAFAFA 0%, #FFFFFF 100%)
         `,
         overflow: 'hidden',
-        py: { xs: 8, md: 0 },
+        pt: { xs: 12, md: 8 }, // Account for floating nav
+        pb: { xs: 8, md: 8 },
       }}
     >
       <Container>
         <Box
+          component={motion.div}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           sx={{
             textAlign: 'center',
-            animation: 'fadeInUp 0.8s ease-out',
-            '@keyframes fadeInUp': {
-              '0%': {
-                opacity: 0,
-                transform: 'translateY(30px)',
-              },
-              '100%': {
-                opacity: 1,
-                transform: 'translateY(0)',
-              },
-            },
           }}
         >
           {/* Name */}
           <Typography
+            component={motion.h1}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
             variant="h1"
             sx={{
               mb: { xs: 1, md: 2 },
@@ -69,6 +68,10 @@ export default function Hero() {
 
           {/* Title */}
           <Typography
+            component={motion.p}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             variant="subtitle1"
             sx={{
               mb: { xs: 2, md: 3 },
@@ -80,6 +83,10 @@ export default function Hero() {
 
           {/* Company Pills - Distinct Colors */}
           <Stack
+            component={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
             direction="row"
             spacing={{ xs: 1, md: 2 }}
             justifyContent="center"
@@ -87,6 +94,10 @@ export default function Hero() {
             sx={{ mb: { xs: 3, md: 6 }, gap: { xs: 1, md: 2 } }}
           >
             <Chip
+              component={motion.div}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.4, ease: 'easeOut' }}
               label="Ex-Google"
               sx={{
                 bgcolor: '#4285F4',
@@ -99,6 +110,10 @@ export default function Hero() {
               }}
             />
             <Chip
+              component={motion.div}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.5, ease: 'easeOut' }}
               label="Ex-PayPal"
               sx={{
                 bgcolor: '#F59E0B',
@@ -111,6 +126,10 @@ export default function Hero() {
               }}
             />
             <Chip
+              component={motion.div}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.6, ease: 'easeOut' }}
               label="IISc Alumni"
               sx={{
                 bgcolor: '#34A853',

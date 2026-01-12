@@ -15,7 +15,6 @@ import {
   ListItemIcon,
   Box,
   Container,
-  Divider,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -55,7 +54,7 @@ export default function FloatingNav() {
       setLastScrollY(currentScrollY);
 
       // Detect active section
-      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'education', 'achievements', 'gate-notes', 'testimonials', 'contact'];
+      const sections = ['home', 'about', 'experience', 'skills', 'education', 'achievements', 'gate-notes', 'testimonials', 'contact'];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -72,12 +71,11 @@ export default function FloatingNav() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Desktop nav items (compact)
+  // Desktop nav items
   const desktopNavItems = [
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
     { label: 'GATE Notes', href: '#gate-notes' },
   ];
 
@@ -86,7 +84,6 @@ export default function FloatingNav() {
     { label: 'About', href: '#about', icon: <Person /> },
     { label: 'Experience', href: '#experience', icon: <Work /> },
     { label: 'Skills', href: '#skills', icon: <Code /> },
-    { label: 'Projects', href: '#projects', icon: <Folder /> },
     { label: 'Education', href: '#education', icon: <School /> },
     { label: 'Achievements', href: '#achievements', icon: <EmojiEvents /> },
     { label: 'GATE Notes', href: '#gate-notes', icon: <MenuBook /> },
@@ -169,96 +166,118 @@ export default function FloatingNav() {
 
   return (
     <>
-      <AppBar
-        position="sticky"
-        elevation={0}
+      <Box
         sx={{
-          bgcolor: 'rgba(255, 255, 255, 0.95)',
-          backdropFilter: 'blur(10px)',
-          borderBottom: '1px solid',
-          borderColor: 'divider',
-          transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1100,
+          transform: isVisible ? 'translateY(0)' : 'translateY(-150%)',
           transition: 'transform 0.3s ease-in-out',
+          pointerEvents: isVisible ? 'auto' : 'none',
         }}
       >
-        <Container maxWidth="lg">
-          <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 0 } }}>
-            <IconButton
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              sx={{
-                color: 'primary.main',
-                '&:hover': {
-                  bgcolor: 'primary.light',
-                },
-              }}
-            >
-              <Home />
-            </IconButton>
-
-            {/* Desktop Nav */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
-              {desktopNavItems.map((item) => {
-                const sectionId = item.href.replace('#', '');
-                const isActive = activeSection === sectionId;
-                return (
-                  <Button
-                    key={item.label}
-                    onClick={() => handleNavClick(item.href)}
-                    sx={{
-                      color: isActive ? 'primary.main' : 'text.primary',
-                      textTransform: 'none',
-                      fontWeight: isActive ? 600 : 500,
-                      px: 2,
-                      position: 'relative',
-                      '&::after': isActive ? {
-                        content: '""',
-                        position: 'absolute',
-                        bottom: 0,
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '60%',
-                        height: '3px',
-                        borderRadius: '3px 3px 0 0',
-                        bgcolor: 'primary.main',
-                      } : {},
-                      '&:hover': {
-                        color: 'primary.main',
-                        bgcolor: 'primary.light',
-                      },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                );
-              })}
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => handleNavClick('#contact')}
+        <Container maxWidth="lg" sx={{ pt: { xs: 1.5, md: 2 } }}>
+          <AppBar
+            position="static"
+            elevation={0}
+            sx={{
+              bgcolor: 'rgba(255, 255, 255, 0.95)',
+              backdropFilter: 'blur(10px)',
+              borderRadius: '16px',
+              border: '1px solid',
+              borderColor: 'divider',
+              boxShadow: '0 4px 24px rgba(0, 0, 0, 0.08)',
+              overflow: 'hidden',
+            }}
+          >
+            <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 2, md: 3 }, py: { xs: 1, md: 1.5 } }}>
+              {/* Left: Home Icon */}
+              <IconButton
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 sx={{
-                  ml: 2,
-                  textTransform: 'none',
-                  fontWeight: 600,
-                  boxShadow: 'none',
+                  color: 'primary.main',
                   '&:hover': {
-                    boxShadow: 1,
+                    bgcolor: 'rgba(66, 133, 244, 0.08)',
                   },
                 }}
               >
-                Contact Me
-              </Button>
-            </Box>
+                <Home sx={{ fontSize: 28 }} />
+              </IconButton>
 
-            {/* Mobile Menu Icon */}
-            <IconButton
-              sx={{ display: { xs: 'flex', md: 'none' } }}
-              onClick={handleDrawerToggle}
-            >
-              <MenuIcon />
-            </IconButton>
-          </Toolbar>
+              {/* Center: Desktop Navigation Links */}
+              <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5, alignItems: 'center' }}>
+                {desktopNavItems.map((item) => {
+                  const sectionId = item.href.replace('#', '');
+                  const isActive = activeSection === sectionId;
+                  return (
+                    <Button
+                      key={item.label}
+                      onClick={() => handleNavClick(item.href)}
+                      sx={{
+                        color: isActive ? 'primary.main' : 'text.primary',
+                        textTransform: 'none',
+                        fontWeight: isActive ? 600 : 500,
+                        fontSize: '15px',
+                        px: 2.5,
+                        py: 1,
+                        borderRadius: '8px',
+                        position: 'relative',
+                        transition: 'all 0.2s ease',
+                        bgcolor: isActive ? 'rgba(66, 133, 244, 0.08)' : 'transparent',
+                        '&:hover': {
+                          color: 'primary.main',
+                          bgcolor: 'rgba(66, 133, 244, 0.08)',
+                        },
+                      }}
+                    >
+                      {item.label}
+                    </Button>
+                  );
+                })}
+              </Box>
+
+              {/* Right: CTA Button (Desktop) / Mobile Menu (Mobile) */}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => handleNavClick('#contact')}
+                  sx={{
+                    display: { xs: 'none', md: 'flex' },
+                    textTransform: 'none',
+                    fontWeight: 600,
+                    fontSize: '15px',
+                    px: 3,
+                    py: 1,
+                    borderRadius: '8px',
+                    boxShadow: 'none',
+                    '&:hover': {
+                      boxShadow: '0 4px 12px rgba(52, 168, 83, 0.3)',
+                      transform: 'translateY(-1px)',
+                    },
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  Contact Me
+                </Button>
+
+                {/* Mobile Menu Icon */}
+                <IconButton
+                  sx={{
+                    display: { xs: 'flex', md: 'none' },
+                    color: 'primary.main',
+                  }}
+                  onClick={handleDrawerToggle}
+                >
+                  <MenuIcon />
+                </IconButton>
+              </Box>
+            </Toolbar>
+          </AppBar>
         </Container>
-      </AppBar>
+      </Box>
 
       {/* Mobile Drawer */}
       <Drawer

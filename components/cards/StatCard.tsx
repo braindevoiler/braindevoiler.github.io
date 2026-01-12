@@ -1,6 +1,7 @@
 'use client';
 
 import { Card, CardContent, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 // Brand colors matching the hero chips
 const COLORS = {
@@ -22,15 +23,20 @@ export default function StatCard({ number, label, color = 'blue' }: StatCardProp
 
   return (
     <Card
+      component={motion.div}
+      whileHover={{
+        y: -8,
+        boxShadow: `0 20px 40px -5px ${accentColor}30, 0 10px 20px -5px ${accentColor}20`,
+      }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
       sx={{
         background: 'rgba(255, 255, 255, 0.9)',
         backdropFilter: 'blur(20px)',
         border: '1px solid',
         borderColor: 'divider',
         transition: 'all 0.3s ease',
+        cursor: 'pointer',
         '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: `0 20px 25px -5px ${accentColor}30, 0 10px 10px -5px ${accentColor}20`,
           borderColor: accentColor,
         },
       }}
@@ -47,6 +53,9 @@ export default function StatCard({ number, label, color = 'blue' }: StatCardProp
         }}
       >
         <Typography
+          component={motion.div}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.2 }}
           variant="h3"
           sx={{
             color: accentColor,

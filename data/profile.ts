@@ -145,8 +145,18 @@ export const profileData = {
       institution: "Indian Institute of Science (IISc)",
       location: "Bangalore, India",
       period: "2012 - 2014",
-      skills: ["Programming", "Problem Solving", "Data Structures", "Algorithms"],
+
       description: "Strong engineering professional focused on advanced computer science concepts.",
+      project: {
+        name: "Big Data Testing Environments",
+        period: "Jul 2013 - Jun 2014",
+        description: "Engineered the CODD Metadata Processor for HP NonStop SQL/MX database. Worked on simulating virtual hardware environments to analyze query engine behavior. Designed PCA based stochastic data generation algorithm.",
+        achievements: [
+          "Engineered CODD Metadata Processor for HP NonStop SQL/MX database, currently in use by HP",
+          "Simulated virtual hardware environments for big data analysis",
+          "Designed PCA based stochastic data generation algorithm",
+        ],
+      },
     },
     {
       degree: "Bachelor of Technology (B.Tech)",
@@ -154,7 +164,12 @@ export const profileData = {
       institution: "Meerut Institute of Engineering and Technology (MIET)",
       location: "Meerut, India",
       period: "2006 - 2010",
-      skills: ["Programming", "Computer Science", "Software Engineering"],
+
+      project: {
+        name: "Color Image Compression using Two Dimensional Principal Component Analysis (2D-PCA)",
+        period: "Jul 2009 - Jun 2010",
+        description: "2D-PCA is an image projection technique for image feature extraction. In this project, the 2D-PCA algorithm was implemented using MATLAB to store the color image in the form of feature matrices and principal components, which have very less size as compared to the actual image. After applying the 2D-PCA technique, normalization of the feature matrices was done to further reduce the size of the image.",
+      },
     },
   ],
 
@@ -167,26 +182,6 @@ export const profileData = {
     "Leadership": ["Technical Leadership", "Team Building", "Agile Methodologies", "Code Review", "Mentoring"],
   },
 
-  projects: [
-    {
-      name: "COVID-19 ImmunoPass Service",
-      period: "Apr 2020",
-      description: "REST based APIs to get people tested for Corona Virus antibodies by issuing pathology lab testing vouchers, and issuing COVID-19 immunity passes based on antibody test results.",
-      skills: ["Maven", "Spring Boot", "Java", "MySQL"],
-      link: "https://github.com/ImmunoPass/ImmunoPassService",
-    },
-    {
-      name: "Big Data Testing Environments",
-      period: "Jul 2013 - Jun 2014",
-      institution: "Indian Institute of Science",
-      description: "Engineered the CODD Metadata Processor for HP NonStop SQL/MX database. Worked on simulating virtual hardware environments to analyze query engine behavior. Designed PCA based stochastic data generation algorithm.",
-      achievements: [
-        "Engineered CODD Metadata Processor for HP NonStop SQL/MX database, currently in use by HP",
-        "Simulated virtual hardware environments for big data analysis",
-        "Designed PCA based stochastic data generation algorithm",
-      ],
-    },
-  ],
 
   achievements: [
     {
@@ -291,6 +286,16 @@ export const profileData = {
   ],
 
   volunteer: [
+    {
+      organization: "COVID-19 ImmunoPass (Open Source)",
+      role: "Backend Developer",
+      period: "Apr 2020",
+      duration: "Community Project",
+      description: "Developed REST based APIs to get people tested for Corona Virus antibodies by issuing pathology lab testing vouchers, and issuing COVID-19 immunity passes based on antibody test results.",
+      cause: "Health & Public Service",
+      skills: ["Maven", "Spring Boot", "Java", "MySQL"],
+      link: "https://github.com/ImmunoPass/ImmunoPassService",
+    },
     {
       organization: "GLUG Meerut",
       role: "Volunteer",

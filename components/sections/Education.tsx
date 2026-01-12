@@ -52,7 +52,7 @@ export default function Education() {
                       </Typography>
 
                       {edu.skills && edu.skills.length > 0 && (
-                        <Stack direction="row" flexWrap="wrap" gap={1}>
+                        <Stack direction="row" flexWrap="wrap" gap={1} sx={{ mb: 2 }}>
                           {edu.skills.map((skill, i) => (
                             <Chip
                               key={i}
@@ -66,6 +66,42 @@ export default function Education() {
                             />
                           ))}
                         </Stack>
+                      )}
+
+                      {edu.project && (
+                        <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+                          <Typography variant="h4" gutterBottom sx={{ color: 'primary.main' }}>
+                            Academic Project
+                          </Typography>
+                          <Typography variant="body1" sx={{ fontWeight: 600, mb: 0.5 }}>
+                            {edu.project.name}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                            {edu.project.period}
+                          </Typography>
+                          <Typography variant="body2" sx={{ mb: 1 }}>
+                            {edu.project.description}
+                          </Typography>
+                          {edu.project.achievements && edu.project.achievements.length > 0 && (
+                            <Stack spacing={0.5}>
+                              {edu.project.achievements.map((achievement, i) => (
+                                <Typography
+                                  key={i}
+                                  variant="body2"
+                                  sx={{
+                                    '&::before': {
+                                      content: '"• "',
+                                      color: 'secondary.main',
+                                      fontWeight: 700,
+                                    },
+                                  }}
+                                >
+                                  {achievement}
+                                </Typography>
+                              ))}
+                            </Stack>
+                          )}
+                        </Box>
                       )}
                     </Box>
                   </Stack>
