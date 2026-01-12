@@ -34,7 +34,7 @@ export default function Experience() {
 
           {/* Experience Items */}
           <Stack spacing={4}>
-            {experience.filter(exp => exp.description.length > 0).map((exp, index) => (
+            {experience.map((exp, index) => (
               <Box
                 key={index}
                 sx={{
@@ -93,25 +93,27 @@ export default function Experience() {
                     </Stack>
 
                     {/* Description */}
-                    <Stack spacing={1} sx={{ mb: exp.skills && exp.skills.length > 0 ? 2 : 0 }}>
-                      {exp.description.map((desc, i) => (
-                        <Typography
-                          key={i}
-                          variant="body1"
-                          sx={{
-                            lineHeight: 1.7,
-                            '&::before': {
-                              content: '"• "',
-                              color: 'secondary.main',
-                              fontWeight: 700,
-                              mr: 1,
-                            },
-                          }}
-                        >
-                          {desc}
-                        </Typography>
-                      ))}
-                    </Stack>
+                    {exp.description && exp.description.length > 0 && (
+                      <Stack spacing={1} sx={{ mb: exp.skills && exp.skills.length > 0 ? 2 : 0 }}>
+                        {exp.description.map((desc, i) => (
+                          <Typography
+                            key={i}
+                            variant="body1"
+                            sx={{
+                              lineHeight: 1.7,
+                              '&::before': {
+                                content: '"• "',
+                                color: 'secondary.main',
+                                fontWeight: 700,
+                                mr: 1,
+                              },
+                            }}
+                          >
+                            {desc}
+                          </Typography>
+                        ))}
+                      </Stack>
+                    )}
 
                     {/* Skills */}
                     {exp.skills && exp.skills.length > 0 && (
