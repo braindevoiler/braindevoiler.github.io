@@ -30,6 +30,7 @@ import {
 } from '@mui/icons-material';
 import Link from 'next/link';
 import { gateNotes } from '@/data/gateNotes';
+import { trackEvent } from '@/lib/analytics';
 import { blogPosts, BlogPost } from '@/data/blog';
 import { motion } from 'framer-motion';
 
@@ -191,6 +192,7 @@ export default function GateResourcesPage() {
                                                 startIcon={<Download />}
                                                 href={note.pdfPath}
                                                 target="_blank"
+                                                onClick={() => trackEvent('download', 'GATE Notes', note.subject)}
                                             >
                                                 Download PDF
                                             </Button>
