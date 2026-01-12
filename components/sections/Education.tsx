@@ -51,22 +51,7 @@ export default function Education() {
                         {edu.period}
                       </Typography>
 
-                      {edu.skills && edu.skills.length > 0 && (
-                        <Stack direction="row" flexWrap="wrap" gap={1} sx={{ mb: 2 }}>
-                          {edu.skills.map((skill, i) => (
-                            <Chip
-                              key={i}
-                              label={skill}
-                              size="small"
-                              sx={{
-                                bgcolor: 'background.default',
-                                border: '1px solid',
-                                borderColor: 'divider',
-                              }}
-                            />
-                          ))}
-                        </Stack>
-                      )}
+
 
                       {edu.project && (
                         <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
