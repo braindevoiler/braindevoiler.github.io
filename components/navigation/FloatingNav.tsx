@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 import {
   AppBar,
   Toolbar,
@@ -99,6 +100,7 @@ export default function FloatingNav() {
   };
 
   const handleNavClick = (href: string) => {
+    trackEvent('click', 'Navigation', href.replace('#', ''));
     setMobileOpen(false);
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };

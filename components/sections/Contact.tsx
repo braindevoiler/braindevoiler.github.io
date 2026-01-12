@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEvent } from '@/lib/analytics';
 import { Box, Typography, Card, CardContent, Link } from '@mui/material';
 import { Email, LinkedIn, GitHub, Article } from '@mui/icons-material';
 import Section from '../layout/Section';
@@ -33,6 +34,7 @@ export default function Contact() {
 
   const handleEmailClick = (e: React.MouseEvent) => {
     e.preventDefault();
+    trackEvent('click', 'Contact', 'Email Reveal');
     const actualEmail = getEmail();
     setEmail(actualEmail);
     setEmailRevealed(true);
@@ -58,13 +60,6 @@ export default function Contact() {
       value: '@braindevoiler',
       link: personal.github,
       color: GOOGLE_COLORS.green,
-    },
-    {
-      icon: <Article sx={{ fontSize: 48 }} />,
-      label: 'Blog',
-      value: '/gate-study-material',
-      link: '/gate-study-material',
-      color: GOOGLE_COLORS.amber,
     },
   ];
 
@@ -127,6 +122,7 @@ export default function Contact() {
                 href={method.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackEvent('click', 'Contact', method.label)}
                 sx={{
                   textDecoration: 'none',
                   textAlign: 'center',

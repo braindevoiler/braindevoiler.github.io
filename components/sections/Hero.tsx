@@ -7,6 +7,7 @@ import Container from '../layout/Container';
 import StatCard from '../cards/StatCard';
 import { GridContainer, GridItem } from '../layout/Grid';
 import { profileData } from '@/data/profile';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Hero() {
   const { personal, stats } = profileData;
@@ -169,7 +170,10 @@ export default function Hero() {
               variant="contained"
               size="large"
               color="secondary"
-              onClick={() => document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                trackEvent('click', 'Hero', 'View Work');
+                document.querySelector('#experience')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               sx={{
                 px: 4,
                 py: 1.5,
@@ -181,7 +185,10 @@ export default function Hero() {
               variant="outlined"
               size="large"
               color="primary"
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => {
+                trackEvent('click', 'Hero', 'Get In Touch');
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               sx={{
                 px: 4,
                 py: 1.5,
