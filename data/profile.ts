@@ -303,6 +303,7 @@ export const profileData = {
       duration: "1 year 6 months",
       description: "Organized GNU/Linux workshops in different engineering colleges of Meerut City.",
       cause: "Education",
+      link: "https://groups.google.com/g/glug-meerut",
     },
   ],
 };

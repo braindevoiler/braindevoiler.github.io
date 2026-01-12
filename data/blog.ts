@@ -222,6 +222,7 @@ export const blogPosts: BlogPost[] = [
       <p>The syllabus of the GATE exam is very wide and it takes a lot of effort to cover it completely. The cone method is a systematic approach to revision that ensures you cover the entire syllabus multiple times with decreasing time intervals.</p>
 
       <h3>What is the Cone Method?</h3>
+      <img src="/images/cone-method.jpeg" alt="Cone Method Diagram" style="width: 100%; max-width: 400px; display: block; margin: 20px auto; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" />
       <p>The Cone Method is based on the principle of spaced repetition. Think of your syllabus as a cone - wide at the base (initial learning) and narrow at the top (final revision).</p>
 
       <h3>How to Apply the Cone Method:</h3>

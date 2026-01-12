@@ -22,7 +22,7 @@ export default function Section({
         py: { xs: 8, md: 16 }, // 64px mobile, 128px desktop
         bgcolor: background === 'alternate' ? 'background.paper' : 'background.default',
         position: 'relative',
-        scrollMarginTop: '-64px', // Negate sticky header space
+        scrollMarginTop: 0,
         ...sx,
       }}
       {...props}

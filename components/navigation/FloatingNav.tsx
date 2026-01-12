@@ -54,7 +54,7 @@ export default function FloatingNav() {
       setLastScrollY(currentScrollY);
 
       // Detect active section
-      const sections = ['home', 'about', 'experience', 'skills', 'education', 'achievements', 'gate-notes', 'testimonials', 'contact'];
+      const sections = ['home', 'about', 'experience', 'skills', 'testimonials', 'education', 'achievements', 'community', 'contact'];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
@@ -76,7 +76,10 @@ export default function FloatingNav() {
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
-    { label: 'GATE Notes', href: '#gate-notes' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Education', href: '#education' },
+    { label: 'Achievements', href: '#achievements' },
+    { label: 'Community', href: '#community' },
   ];
 
   // Mobile nav items (all sections with icons)
@@ -84,10 +87,10 @@ export default function FloatingNav() {
     { label: 'About', href: '#about', icon: <Person /> },
     { label: 'Experience', href: '#experience', icon: <Work /> },
     { label: 'Skills', href: '#skills', icon: <Code /> },
+    { label: 'Testimonials', href: '#testimonials', icon: <FormatQuote /> },
     { label: 'Education', href: '#education', icon: <School /> },
     { label: 'Achievements', href: '#achievements', icon: <EmojiEvents /> },
-    { label: 'GATE Notes', href: '#gate-notes', icon: <MenuBook /> },
-    { label: 'Testimonials', href: '#testimonials', icon: <FormatQuote /> },
+    { label: 'Community', href: '#community', icon: <MenuBook /> },
     { label: 'Contact', href: '#contact', icon: <Email /> },
   ];
 

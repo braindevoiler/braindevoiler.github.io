@@ -34,8 +34,8 @@ export default function Hero() {
           linear-gradient(to bottom, #FAFAFA 0%, #FFFFFF 100%)
         `,
         overflow: 'hidden',
-        pt: { xs: 12, md: 8 }, // Account for floating nav
-        pb: { xs: 8, md: 8 },
+        pt: { xs: '64px', md: '80px' }, // Start content below header
+        pb: 0,
       }}
     >
       <Container>

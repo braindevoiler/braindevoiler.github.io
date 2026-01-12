@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Box, Typography, Card, CardContent, Link } from '@mui/material';
-import { Email, LinkedIn, GitHub } from '@mui/icons-material';
+import { Email, LinkedIn, GitHub, Article } from '@mui/icons-material';
 import Section from '../layout/Section';
 import Container from '../layout/Container';
 import SectionTitle from '../layout/SectionTitle';
@@ -14,6 +14,7 @@ const GOOGLE_COLORS = {
   blue: '#4285F4',
   red: '#EA4335',
   green: '#34A853',
+  amber: '#F59E0B',
 };
 
 // Split email into parts to prevent crawler detection
@@ -58,6 +59,13 @@ export default function Contact() {
       link: personal.github,
       color: GOOGLE_COLORS.green,
     },
+    {
+      icon: <Article sx={{ fontSize: 48 }} />,
+      label: 'Blog',
+      value: '/gate-study-material',
+      link: '/gate-study-material',
+      color: GOOGLE_COLORS.amber,
+    },
   ];
 
   return (
@@ -79,7 +87,7 @@ export default function Contact() {
 
         <GridContainer spacing={3} sx={{ maxWidth: 900, mx: 'auto', justifyContent: 'center' }}>
           {/* Email Card - Obfuscated */}
-          <GridItem xs={12} sm={4}>
+          <GridItem xs={12} sm={6} md={3}>
             <Card
               component="a"
               href="#"
@@ -111,9 +119,9 @@ export default function Contact() {
             </Card>
           </GridItem>
 
-          {/* LinkedIn & GitHub - Regular links */}
+          {/* LinkedIn & GitHub & Blog - Regular links */}
           {regularContactMethods.map((method, index) => (
-            <GridItem key={index} xs={12} sm={4}>
+            <GridItem key={index} xs={12} sm={6} md={3}>
               <Card
                 component="a"
                 href={method.link}
