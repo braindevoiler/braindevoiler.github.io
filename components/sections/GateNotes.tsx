@@ -7,6 +7,7 @@ import Container from '../layout/Container';
 import SectionTitle from '../layout/SectionTitle';
 import { GridContainer, GridItem } from '../layout/Grid';
 import { gateNotes } from '@/data/gateNotes';
+import { trackEvent } from '@/lib/analytics';
 
 // Google colors for cycling
 const GOOGLE_COLORS = ['#4285F4', '#EA4335', '#F59E0B', '#34A853'];
@@ -106,6 +107,7 @@ export default function GateNotes() {
                           href={note.notes.handwritten}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackEvent('download', 'GATE Notes Handwritten', note.notes.handwritten?.split('/').pop())}
                           sx={{
                             bgcolor: accentColor,
                             boxShadow: 'none',
@@ -127,6 +129,7 @@ export default function GateNotes() {
                           href={note.notes.digitized}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackEvent('download', 'GATE Notes Digitized', note.notes.digitized?.split('/').pop())}
                           sx={{
                             color: accentColor,
                             borderColor: accentColor,

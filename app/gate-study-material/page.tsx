@@ -196,7 +196,7 @@ export default function GateResourcesPage() {
                                                         href={note.notes.handwritten}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        onClick={() => trackEvent('download', 'GATE Notes Handwritten', note.subject)}
+                                                        onClick={() => trackEvent('download', 'GATE Notes Handwritten', note.notes.handwritten?.split('/').pop())}
                                                     >
                                                         Download Handwritten
                                                     </Button>
@@ -210,7 +210,7 @@ export default function GateResourcesPage() {
                                                         href={note.notes.digitized}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        onClick={() => trackEvent('download', 'GATE Notes Digitized', note.subject)}
+                                                        onClick={() => trackEvent('download', 'GATE Notes Digitized', note.notes.digitized?.split('/').pop())}
                                                     >
                                                         Download Digitized
                                                     </Button>
