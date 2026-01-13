@@ -15,6 +15,10 @@ export default function NoteViewer({ noteId }: NoteViewerProps) {
 
     const note = gateNotes.find(n => n.id === noteId);
 
+    const [noteType, setNoteType] = useState<'handwritten' | 'digitized'>(
+        note?.notes.handwritten ? 'handwritten' : 'digitized'
+    );
+
     if (!note) {
         return (
             <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -33,8 +37,12 @@ export default function NoteViewer({ noteId }: NoteViewerProps) {
         );
     }
 
+    const currentPdfPath = noteType === 'handwritten' ? note.notes.handwritten : note.notes.digitized;
+
     const handleFullscreen = () => {
-        window.open(note.pdfPath, '_blank');
+        if (currentPdfPath) {
+            window.open(currentPdfPath, '_blank');
+        }
     };
 
     return (
@@ -73,9 +81,39 @@ export default function NoteViewer({ noteId }: NoteViewerProps) {
                                 <Typography variant="h5" sx={{ fontWeight: 600, fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' } }}>
                                     {note.subject}
                                 </Typography>
-                                <Typography variant="body2" sx={{ opacity: 0.9, fontSize: { xs: '0.75rem', md: '0.875rem' }, display: { xs: 'none', sm: 'block' } }}>
-                                    GATE CS Notes
-                                </Typography>
+                                <Stack direction="row" spacing={1} alignItems="center">
+                                    <Typography variant="body2" sx={{ opacity: 0.9, fontSize: { xs: '0.75rem', md: '0.875rem' }, display: { xs: 'none', sm: 'block' } }}>
+                                        GATE CS Notes
+                                    </Typography>
+                                    {note.notes.handwritten && note.notes.digitized && (
+                                        <Box sx={{ bgcolor: 'rgba(255,255,255,0.2)', borderRadius: 1, p: 0.5 }}>
+                                            <Button
+                                                size="small"
+                                                onClick={() => setNoteType('handwritten')}
+                                                sx={{
+                                                    color: 'white',
+                                                    minWidth: 'auto',
+                                                    bgcolor: noteType === 'handwritten' ? 'rgba(255,255,255,0.3)' : 'transparent',
+                                                    fontWeight: noteType === 'handwritten' ? 'bold' : 'normal'
+                                                }}
+                                            >
+                                                Handwritten
+                                            </Button>
+                                            <Button
+                                                size="small"
+                                                onClick={() => setNoteType('digitized')}
+                                                sx={{
+                                                    color: 'white',
+                                                    minWidth: 'auto',
+                                                    bgcolor: noteType === 'digitized' ? 'rgba(255,255,255,0.3)' : 'transparent',
+                                                    fontWeight: noteType === 'digitized' ? 'bold' : 'normal'
+                                                }}
+                                            >
+                                                Digitized
+                                            </Button>
+                                        </Box>
+                                    )}
+                                </Stack>
                             </Box>
                         </Stack>
 
@@ -96,10 +134,12 @@ export default function NoteViewer({ noteId }: NoteViewerProps) {
                                 Fullscreen
                             </Button>
                             <Button
+                                component="a"
                                 variant="contained"
                                 startIcon={<Download />}
-                                href={note.pdfPath}
-                                download
+                                href={currentPdfPath}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 size="small"
                                 sx={{
                                     width: { xs: '100%', sm: 'auto' },
@@ -144,7 +184,7 @@ export default function NoteViewer({ noteId }: NoteViewerProps) {
                         </Box>
                     )}
                     <iframe
-                        src={note.pdfPath}
+                        src={currentPdfPath}
                         width="100%"
                         height="100%"
                         style={{ border: 'none' }}

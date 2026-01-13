@@ -186,16 +186,36 @@ export default function GateResourcesPage() {
                                                 ))}
                                             </Box>
 
-                                            <Button
-                                                variant="outlined"
-                                                fullWidth
-                                                startIcon={<Download />}
-                                                href={note.pdfPath}
-                                                target="_blank"
-                                                onClick={() => trackEvent('download', 'GATE Notes', note.subject)}
-                                            >
-                                                Download PDF
-                                            </Button>
+                                            <Stack spacing={1} sx={{ mt: 'auto' }}>
+                                                {note.notes.handwritten && (
+                                                    <Button
+                                                        component="a"
+                                                        variant="contained"
+                                                        fullWidth
+                                                        startIcon={<Download />}
+                                                        href={note.notes.handwritten}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        onClick={() => trackEvent('download', 'GATE Notes Handwritten', note.subject)}
+                                                    >
+                                                        Download Handwritten
+                                                    </Button>
+                                                )}
+                                                {note.notes.digitized && (
+                                                    <Button
+                                                        component="a"
+                                                        variant="outlined"
+                                                        fullWidth
+                                                        startIcon={<Download />}
+                                                        href={note.notes.digitized}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        onClick={() => trackEvent('download', 'GATE Notes Digitized', note.subject)}
+                                                    >
+                                                        Download Digitized
+                                                    </Button>
+                                                )}
+                                            </Stack>
                                         </CardContent>
                                     </Card>
                                 </Grid>

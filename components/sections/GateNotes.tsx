@@ -97,24 +97,51 @@ export default function GateNotes() {
                       )}
                     </Box>
 
-                    <Button
-                      variant="contained"
-                      startIcon={<Download />}
-                      href={note.pdfPath}
-                      download
-                      sx={{
-                        mt: 'auto',
-                        bgcolor: accentColor,
-                        boxShadow: 'none',
-                        '&:hover': {
-                          bgcolor: accentColor,
-                          filter: 'brightness(0.9)',
-                          boxShadow: 2,
-                        },
-                      }}
-                    >
-                      Download PDF
-                    </Button>
+                    <Box sx={{ mt: 'auto', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+                      {note.notes.handwritten && (
+                        <Button
+                          component="a"
+                          variant="contained"
+                          startIcon={<Download />}
+                          href={note.notes.handwritten}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            bgcolor: accentColor,
+                            boxShadow: 'none',
+                            '&:hover': {
+                              bgcolor: accentColor,
+                              filter: 'brightness(0.9)',
+                              boxShadow: 2,
+                            },
+                          }}
+                        >
+                          Download Handwritten
+                        </Button>
+                      )}
+                      {note.notes.digitized && (
+                        <Button
+                          component="a"
+                          variant="outlined"
+                          startIcon={<Download />}
+                          href={note.notes.digitized}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{
+                            color: accentColor,
+                            borderColor: accentColor,
+                            borderWidth: 2,
+                            '&:hover': {
+                              borderWidth: 2,
+                              borderColor: accentColor,
+                              bgcolor: `${accentColor}10`,
+                            },
+                          }}
+                        >
+                          Download Digitized
+                        </Button>
+                      )}
+                    </Box>
                   </CardContent>
                 </Card>
               </GridItem>
